@@ -1,10 +1,10 @@
-#include <stdio.h>
-#include <ctype.h>
+#include "shell.h"
 
 /**
- * interactive - entry point
- * @info: adresse
- * Return: 1 or 0
+ * interactive - returns true if shell is interactive mode
+ * @info: struct address
+ *
+ * Return: 1 if interactive mode, 0 otherwise
  */
 int interactive(info_t *info)
 {
@@ -12,62 +12,63 @@ int interactive(info_t *info)
 }
 
 /**
- * is_delim - entry point
- * @c: a char
- * @delim: a string
- * Return: 1 or 0
+ * is_delim - checks if character is a delimeter
+ * @c: the char to check
+ * @delim: the delimeter string
+ * Return: 1 if true, 0 if false
  */
 int is_delim(char c, char *delim)
 {
-	while (*delim != '\0')
-	{
-	if (c == *delim)
-	return (1);
-	delim++;
-	}
+	while (*delim)
+		if (*delim++ == c)
+			return (1);
 	return (0);
 }
 
 /**
- * is_alpha - entry point
- * @c: an int
- * Return: 1 or 0
+ *_isalpha - checks for alphabetic character
+ *@c: The character to input
+ *Return: 1 if c is alphabetic, 0 otherwise
  */
-int is_alpha(int c)
+
+int _isalpha(int c)
 {
-	return (isalpha(c));
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+		return (1);
+	else
+		return (0);
 }
 
 /**
- * atoi_custom - entry point
- * @s: a string
- * Return: 0 or other number (int)
+ *_atoi - converts a string to an integer
+ *@s: the string to be converted
+ *Return: 0 if no numbers in string, converted number otherwise
  */
-int atoi_custom(char *s)
+
+int _atoi(char *s)
 {
-	int i = 0;
-	int sign = 1;
-	int output = 0;
+	int i, sign = 1, flag = 0, output;
+	unsigned int result = 0;
 
-	if (s[0] == '-')
+	for (i = 0;  s[i] != '\0' && flag != 2; i++)
 	{
-	sign = -1;
-	i = 1;
-	}
+		if (s[i] == '-')
+			sign *= -1;
 
-	while (s[i] != '\0')
-	{
-	if (isdigit(s[i]))
-	{
-		output = output * 10 + (s[i] - '0');
-		i++;
-	}
-	else
-	{
-		break;
+		if (s[i] >= '0' && s[i] <= '9')
+		{
+			flag = 1;
+			result *= 10;
+			result += (s[i] - '0');
 		}
+		else if (flag == 1)
+			flag = 2;
 	}
 
-	return (output * sign);
-}
+	if (sign == -1)
+		output = -result;
+	else
+		output = result;
 
+	return (output);
+}
