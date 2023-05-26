@@ -8,7 +8,7 @@
  */
 int interactive(info_t *info)
 {
-    return (isatty(STDIN_FILENO) && info->readfd <= 2);
+	return (isatty(STDIN_FILENO) && info->readfd <= 2);
 }
 
 /**
@@ -19,23 +19,23 @@ int interactive(info_t *info)
  */
 int is_delim(char c, char *delim)
 {
-    while (*delim != '\0')
-    {
-        if (c == *delim)
-            return 1;
-        delim++;
-    }
-    return 0;
+	while (*delim != '\0')
+	{
+	if (c == *delim)
+	return (1);
+	delim++;
+	}
+	return (0);
 }
 
 /**
  * is_alpha - entry point
  * @c: an int
- * Return: 1 or 0 
+ * Return: 1 or 0
  */
 int is_alpha(int c)
 {
-    return isalpha(c);
+	return (isalpha(c));
 }
 
 /**
@@ -45,29 +45,29 @@ int is_alpha(int c)
  */
 int atoi_custom(char *s)
 {
-    int i = 0;
-    int sign = 1;
-    int output = 0;
+	int i = 0;
+	int sign = 1;
+	int output = 0;
 
-    if (s[0] == '-')
-    {
-        sign = -1;
-        i = 1;
-    }
+	if (s[0] == '-')
+	{
+	sign = -1;
+	i = 1;
+	}
 
-    while (s[i] != '\0')
-    {
-        if (isdigit(s[i]))
-        {
-            output = output * 10 + (s[i] - '0');
-            i++;
-        }
-        else
-        {
-            break;
-        }
-    }
+	while (s[i] != '\0')
+	{
+	if (isdigit(s[i]))
+	{
+		output = output * 10 + (s[i] - '0');
+		i++;
+	}
+	else
+	{
+		break;
+		}
+	}
 
-    return output * sign;
+	return (output * sign);
 }
 
