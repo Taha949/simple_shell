@@ -45,7 +45,8 @@ int set_alias(info_t *info, char *str)
 
 int unset_alias(info_t *info, char *str)
 {
-	int index = get_node_index(info->alias, node_starts_with(info->alias, str, -1));
+	int index = get_node_index(info->alias,
+			node_starts_with(info->alias, str, -1));
 
 	if (index == -1)
 		return (1);
