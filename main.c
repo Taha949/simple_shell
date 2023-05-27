@@ -1,11 +1,11 @@
 #include "shell.h"
 
 /**
- * main - entry point
- * @ac: arg count
- * @av: arg vector
+ * main - point d'entrée
+ * @ac: nombre d'arguments
+ * @av: vecteur d'arguments
  *
- * Return: 0 or 1
+ * Return: 0 en cas de succès, 1 en cas d'erreur
  */
 int main(int ac, char **av)
 {
@@ -27,7 +27,7 @@ int main(int ac, char **av)
 			if (errno == ENOENT)
 			{
 				_eputs(av[0]);
-				_eputs(": 0: Can't open ");
+				_eputs(": 0: Impossible d'ouvrir ");
 				_eputs(av[1]);
 				_eputchar('\n');
 				_eputchar(BUF_FLUSH);
@@ -42,3 +42,4 @@ int main(int ac, char **av)
 	hsh(info, av);
 	return (EXIT_SUCCESS);
 }
+

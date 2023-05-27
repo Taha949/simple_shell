@@ -1,12 +1,11 @@
 #include "shell.h"
 
 /**
- * **strtow - divise une chaîne de caractères en mots. Les délimiteurs répétés sont ignorés
+ * **strtow - découpe une chaîne de caractères en mots. Les délimiteurs répétés sont ignorés.
  * @str: la chaîne de caractères d'entrée
  * @d: la chaîne de délimiteurs
  * Return: un pointeur vers un tableau de chaînes de caractères, ou NULL en cas d'échec
  */
-
 char **strtow(char *str, char *d)
 {
 	int i, j, k, m, numwords = 0;
@@ -49,7 +48,7 @@ char **strtow(char *str, char *d)
 }
 
 /**
- * **strtow2 - divise une chaîne de caractères en mots
+ * **strtow2 - découpe une chaîne de caractères en mots
  * @str: la chaîne de caractères d'entrée
  * @d: le délimiteur
  * Return: un pointeur vers un tableau de chaînes de caractères, ou NULL en cas d'échec

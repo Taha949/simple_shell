@@ -1,86 +1,85 @@
 #include "shell.h"
 
 /**
- * list_len - détermine la longueur de la liste chaînée
+ * list_len - détermine la longueur d'une liste chaînée
  * @h: pointeur vers le premier nœud
  *
  * Return: taille de la liste
  */
 size_t list_len(const list_t *h)
 {
-    size_t i = 0;
+	size_t i = 0;
 
-    while (h)
-    {
-        h = h->next;
-        i++;
-    }
-    return (i);
+	while (h)
+	{
+		h = h->next;
+		i++;
+	}
+	return (i);
 }
 
 /**
- * list_to_strings - renvoie un tableau de chaînes de caractères des champs list->str
+ * list_to_strings - retourne un tableau de chaînes de caractères des valeurs list->str
  * @head: pointeur vers le premier nœud
  *
  * Return: tableau de chaînes de caractères
  */
 char **list_to_strings(list_t *head)
 {
-    list_t *node = head;
-    size_t i = list_len(head), j;
-    char **strs;
-    char *str;
+	list_t *node = head;
+	size_t i = list_len(head), j;
+	char **strs;
+	char *str;
 
-    if (!head || !i)
-        return (NULL);
-    strs = malloc(sizeof(char *) * (i + 1));
-    if (!strs)
-        return (NULL);
-    for (i = 0; node; node = node->next, i++)
-    {
-        str = malloc(_strlen(node->str) + 1);
-        if (!str)
-        {
-            for (j = 0; j < i; j++)
-                free(strs[j]);
-            free(strs);
-            return (NULL);
-        }
+	if (!head || !i)
+		return (NULL);
+	strs = malloc(sizeof(char *) * (i + 1));
+	if (!strs)
+		return (NULL);
+	for (i = 0; node; node = node->next, i++)
+	{
+		str = malloc(_strlen(node->str) + 1);
+		if (!str)
+		{
+			for (j = 0; j < i; j++)
+				free(strs[j]);
+			free(strs);
+			return (NULL);
+		}
 
-        str = _strcpy(str, node->str);
-        strs[i] = str;
-    }
-    strs[i] = NULL;
-    return (strs);
+		str = _strcpy(str, node->str);
+		strs[i] = str;
+	}
+	strs[i] = NULL;
+	return (strs);
 }
 
-
 /**
- * print_list - imprime tous les éléments d'une liste chaînée list_t
+ * print_list - affiche tous les éléments d'une liste chaînée list_t
  * @h: pointeur vers le premier nœud
  *
  * Return: taille de la liste
  */
 size_t print_list(const list_t *h)
 {
-    size_t i = 0;
+	size_t i = 0;
 
-    while (h)
-    {
-        _puts(convert_number(h->num, 10, 0));
-        _putchar(':');
-        _putchar(' ');
-        _puts(h->str ? h->str : "(nil)");
-        _puts("\n");
-        h = h->next;
-        i++;
-    }
-    return (i);
+	while (h)
+	{
+		_puts(convert_number(h->num, 10, 0));
+		_putchar(':');
+		_putchar(' ');
+		_puts(h->str ? h->str : "(nil)");
+		_puts("\n");
+		h = h->next;
+		i++;
+	}
+	return (i);
 }
 
 /**
- * node_starts_with - renvoie le nœud dont la chaîne commence par un préfixe
- * @node: pointeur vers la tête de liste
+ * node_starts_with - retourne le nœud dont la chaîne commence par le préfixe
+ * @node: pointeur vers le premier nœud
  * @prefix: chaîne à rechercher
  * @c: le prochain caractère après le préfixe à rechercher
  *
@@ -88,36 +87,36 @@ size_t print_list(const list_t *h)
  */
 list_t *node_starts_with(list_t *node, char *prefix, char c)
 {
-    char *p = NULL;
+	char *p = NULL;
 
-    while (node)
-    {
-        p = starts_with(node->str, prefix);
-        if (p && ((c == -1) || (*p == c)))
-            return (node);
-        node = node->next;
-    }
-    return (NULL);
+	while (node)
+	{
+		p = starts_with(node->str, prefix);
+		if (p && ((c == -1) || (*p == c)))
+			return (node);
+		node = node->next;
+	}
+	return (NULL);
 }
 
 /**
- * get_node_index - obtient l'index d'un nœud
- * @head: pointeur vers la tête de liste
+ * get_node_index - obtient l'indice d'un nœud
+ * @head: pointeur vers le premier nœud
  * @node: pointeur vers le nœud
  *
- * Return: index du nœud ou -1
+ * Return: indice du nœud ou -1
  */
 ssize_t get_node_index(list_t *head, list_t *node)
 {
-    size_t i = 0;
+	size_t i = 0;
 
-    while (head)
-    {
-        if (head == node)
-            return (i);
-        head = head->next;
-        i++;
-    }
-    return (-1);
+	while (head)
+	{
+		if (head == node)
+			return (i);
+		head = head->next;
+		i++;
+	}
+	return (-1);
 }
 

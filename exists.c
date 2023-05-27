@@ -1,17 +1,16 @@
 #include "shell.h"
 
 /**
- * _strncpy - entry point
- * @dest: Destination string to copy to
- * @src: Source string
- * @n: Number of characters to copy
- *
- * Return: The copied string
+ * _strncpy - copie une chaîne de caractères
+ * @dest: la chaîne de destination où copier
+ * @src: la chaîne source
+ * @n: le nombre de caractères à copier
+ * Return: la chaîne de destination copiée
  */
 char *_strncpy(char *dest, char *src, int n)
 {
 	int i, j;
-	char *result = dest;
+	char *s = dest;
 
 	i = 0;
 	while (src[i] != '\0' && i < n - 1)
@@ -28,21 +27,20 @@ char *_strncpy(char *dest, char *src, int n)
 			j++;
 		}
 	}
-	return (result);
+	return (s);
 }
 
 /**
- * _strncat - entry point
- * @dest: First string
- * @src: Second string
- * @n: Maximum number of bytes to use
- *
- * Return: The concatenated string
+ * _strncat - concatène deux chaînes de caractères
+ * @dest: la première chaîne
+ * @src: la deuxième chaîne
+ * @n: le nombre maximal d'octets à utiliser
+ * Return: la chaîne concaténée
  */
 char *_strncat(char *dest, char *src, int n)
 {
 	int i, j;
-	char *result = dest;
+	char *s = dest;
 
 	i = 0;
 	j = 0;
@@ -56,15 +54,14 @@ char *_strncat(char *dest, char *src, int n)
 	}
 	if (j < n)
 		dest[i] = '\0';
-	return (result);
+	return (s);
 }
 
 /**
- * _strchr - entry point
- * @s: String to be parsed
- * @c: Character to look for
- *
- * Return: A pointer to the memory area of s
+ * _strchr - recherche un caractère dans une chaîne de caractères
+ * @s: la chaîne à analyser
+ * @c: le caractère à rechercher
+ * Return: (s) un pointeur vers la zone mémoire s
  */
 char *_strchr(char *s, char c)
 {

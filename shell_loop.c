@@ -2,8 +2,8 @@
 
 /**
  * hsh - boucle principale du shell
- * @info: pointeur vers la structure info
- * @av: le vecteur d'arguments de main()
+ * @info: la structure d'informations pour les paramètres et le retour
+ * @av: le vecteur d'arguments depuis main()
  *
  * Return: 0 en cas de succès, 1 en cas d'erreur, ou le code d'erreur
  */
@@ -44,13 +44,13 @@ int hsh(info_t *info, char **av)
 }
 
 /**
- * find_builtin - cherche une commande intégrée
- * @info: pointeur vers la structure info
+ * find_builtin - cherche une commande interne
+ * @info: la structure d'informations pour les paramètres et le retour
  *
- * Return: -1 si la commande intégrée n'est pas trouvée,
- *         0 si la commande intégrée est exécutée avec succès,
- *         1 si la commande intégrée est trouvée mais sans succès,
- *         -2 si la commande intégrée signale exit()
+ * Return: -1 si la commande interne n'est pas trouvée,
+ *           0 si la commande interne a été exécutée avec succès,
+ *           1 si la commande interne a été trouvée mais n'a pas réussi,
+ *           -2 si la commande interne signale exit()
  */
 int find_builtin(info_t *info)
 {
@@ -79,7 +79,7 @@ int find_builtin(info_t *info)
 
 /**
  * find_cmd - cherche une commande dans le PATH
- * @info: pointeur vers la structure info
+ * @info: la structure d'informations pour les paramètres et le retour
  *
  * Return: void
  */
@@ -114,14 +114,14 @@ void find_cmd(info_t *info)
 		else if (*(info->arg) != '\n')
 		{
 			info->status = 127;
-			print_error(info, "not found\n");
+			print_error(info, "non trouvé\n");
 		}
 	}
 }
 
 /**
- * fork_cmd - crée un processus enfant pour exécuter la commande
- * @info: pointeur vers la structure info
+ * fork_cmd - crée un processus pour exécuter une commande
+ * @info: la structure d'informations pour les paramètres et le retour
  *
  * Return: void
  */
@@ -132,7 +132,6 @@ void fork_cmd(info_t *info)
 	child_pid = fork();
 	if (child_pid == -1)
 	{
-	
 		perror("Erreur :");
 		return;
 	}
@@ -145,7 +144,6 @@ void fork_cmd(info_t *info)
 				exit(126);
 			exit(1);
 		}
-		
 	}
 	else
 	{

@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * is_chain - vérifie si le caractère courant dans le tampon est un délimiteur de chaîne
- * @info: la structure des paramètres
+ * is_chain - teste si le caractère actuel dans le tampon est un délimiteur de chaîne
+ * @info: la structure de paramètres
  * @buf: le tampon de caractères
- * @p: adresse de la position courante dans buf
+ * @p: adresse de la position actuelle dans buf
  *
  * Return: 1 si c'est un délimiteur de chaîne, 0 sinon
  */
@@ -24,9 +24,9 @@ int is_chain(info_t *info, char *buf, size_t *p)
 		j++;
 		info->cmd_buf_type = CMD_AND;
 	}
-	else if (buf[j] == ';') /* trouvé la fin de cette commande */
+	else if (buf[j] == ';')
 	{
-		buf[j] = 0; /* remplace le point-virgule par un null */
+		buf[j] = 0;
 		info->cmd_buf_type = CMD_CHAIN;
 	}
 	else
@@ -36,10 +36,10 @@ int is_chain(info_t *info, char *buf, size_t *p)
 }
 
 /**
- * check_chain - vérifie si nous devons continuer à enchaîner en fonction du dernier statut
- * @info: la structure des paramètres
+ * check_chain - vérifie si nous devons continuer à enchaîner en fonction du dernier état
+ * @info: la structure de paramètres
  * @buf: le tampon de caractères
- * @p: adresse de la position courante dans buf
+ * @p: adresse de la position actuelle dans buf
  * @i: position de départ dans buf
  * @len: longueur de buf
  *
@@ -70,8 +70,8 @@ void check_chain(info_t *info, char *buf, size_t *p, size_t i, size_t len)
 }
 
 /**
- * replace_alias - remplace les alias dans la chaîne tokenisée
- * @info: la structure des paramètres
+ * replace_alias - remplace les alias dans la chaîne de caractères tokenisée
+ * @info: la structure de paramètres
  *
  * Return: 1 si remplacé, 0 sinon
  */
@@ -99,8 +99,8 @@ int replace_alias(info_t *info)
 }
 
 /**
- * replace_vars - remplace les variables dans la chaîne tokenisée
- * @info: la structure des paramètres
+ * replace_vars - remplace les variables dans la chaîne de caractères tokenisée
+ * @info: la structure de paramètres
  *
  * Return: 1 si remplacé, 0 sinon
  */
@@ -141,7 +141,7 @@ int replace_vars(info_t *info)
 
 /**
  * replace_string - remplace une chaîne de caractères
- * @old: adresse de l'ancienne chaîne de caractères
+ * @old: adresse de l'ancienne chaîne
  * @new: nouvelle chaîne de caractères
  *
  * Return: 1 si remplacé, 0 sinon

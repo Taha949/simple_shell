@@ -1,93 +1,86 @@
 #include "shell.h"
 
 /**
- * eputs - entry point
- * @str: the string
+ * _eputs - affiche une chaîne de caractères
+ * @str: la chaîne de caractères à afficher
  *
- * Return: void
+ * Return: Rien
  */
-void eputs(const char *str)
+void _eputs(char *str)
 {
-	if (str != NULL)
+	int i = 0;
+
+	if (!str)
+		return;
+	while (str[i] != '\0')
 	{
-		while (*str != '\0')
-		{
-			_eputchar(*str);
-			str++;
-		}
+		_eputchar(str[i]);
+		i++;
 	}
 }
 
 /**
- * eputchar - entry point
- * @c: a char
+ * _eputchar - écrit le caractère c sur stderr
+ * @c: Le caractère à imprimer
  *
- * Return: 1 or -1
+ * Return: En cas de succès, renvoie 1.
+ * En cas d'erreur, -1 est renvoyé et errno est défini correctement.
  */
-int eputchar(char c)
+int _eputchar(char c)
 {
 	static int i;
 	static char buf[WRITE_BUF_SIZE];
 
-	i = 0;
 	if (c == BUF_FLUSH || i >= WRITE_BUF_SIZE)
 	{
 		write(2, buf, i);
 		i = 0;
 	}
-
 	if (c != BUF_FLUSH)
 		buf[i++] = c;
-
 	return (1);
 }
 
 /**
- * put_to_fd - writes the character c to the given file descriptor
- * @c: The character to print
- * @fd: The file descriptor to write to
+ * _putfd - écrit le caractère c sur le descripteur de fichier donné
+ * @c: Le caractère à imprimer
+ * @fd: Le descripteur de fichier où écrire
  *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * Return: En cas de succès, renvoie 1.
+ * En cas d'erreur, -1 est renvoyé et errno est défini correctement.
  */
-int put_to_fd(char c, int fd)
+int _putfd(char c, int fd)
 {
 	static int i;
 	static char buf[WRITE_BUF_SIZE];
 
-	i = 0;
 	if (c == BUF_FLUSH || i >= WRITE_BUF_SIZE)
 	{
 		write(fd, buf, i);
 		i = 0;
 	}
-
 	if (c != BUF_FLUSH)
 		buf[i++] = c;
-
 	return (1);
 }
 
 /**
- * puts_to_fd - prints an input string to the given file descriptor
- * @str: the string to be printed
- * @fd: the file descriptor to write to
+ * _putsfd - affiche une chaîne de caractères
+ * @str: la chaîne de caractères à afficher
+ * @fd: Le descripteur de fichier où écrire
  *
- * Return: the number of characters written
+ * Return: le nombre de caractères écrits
  */
-int puts_to_fd(const char *str, int fd)
+int _putsfd(char *str, int fd)
 {
-	int count = 0;
+	int i = 0;
 
-	if (str != NULL)
+	if (!str)
+		return (0);
+	while (*str)
 	{
-		while (*str != '\0')
-		{
-			count += put_to_fd(*str, fd);
-			str++;
-		}
+		i += _putfd(*str++, fd);
 	}
-
-	return (count);
+	return (i);
 }
 

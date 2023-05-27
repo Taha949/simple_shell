@@ -1,9 +1,11 @@
 #include "shell.h"
 
 /**
- * _myexit - entry point
- * @info: a structure
- *  Return: O or exit
+ * _myexit - quitte le shell
+ * @info: Structure contenant les arguments potentiels. Utilisée pour maintenir
+ *          le prototype de fonction constant.
+ *  Return: quitte avec un statut de sortie donné
+ *         (0) si info->argv[0] != "exit"
  */
 int _myexit(info_t *info)
 {
@@ -15,7 +17,7 @@ int _myexit(info_t *info)
 		if (exitcheck == -1)
 		{
 			info->status = 2;
-			print_error(info, "Illegal number: ");
+			print_error(info, "Nombre illégal : ");
 			_eputs(info->argv[1]);
 			_eputchar('\n');
 			return (1);
@@ -28,9 +30,10 @@ int _myexit(info_t *info)
 }
 
 /**
- * _mycd - entry point
- * @info: a structure
- *  Return: 0
+ * _mycd - change le répertoire courant du processus
+ * @info: Structure contenant les arguments potentiels. Utilisée pour maintenir
+ *          le prototype de fonction constant.
+ *  Return: Toujours 0
  */
 int _mycd(info_t *info)
 {
@@ -44,8 +47,7 @@ int _mycd(info_t *info)
 	{
 		dir = _getenv(info, "HOME=");
 		if (!dir)
-			chdir_ret =
-				chdir((dir = _getenv(info, "PWD=")) ? dir : "/");
+			chdir_ret = chdir((dir = _getenv(info, "PWD=")) ? dir : "/");
 		else
 			chdir_ret = chdir(dir);
 	}
@@ -58,14 +60,13 @@ int _mycd(info_t *info)
 			return (1);
 		}
 		_puts(_getenv(info, "OLDPWD=")), _putchar('\n');
-		chdir_ret =
-			chdir((dir = _getenv(info, "OLDPWD=")) ? dir : "/");
+		chdir_ret = chdir((dir = _getenv(info, "OLDPWD=")) ? dir : "/");
 	}
 	else
 		chdir_ret = chdir(info->argv[1]);
 	if (chdir_ret == -1)
 	{
-		print_error(info, "can't cd to ");
+		print_error(info, "Impossible d'accéder à ");
 		_eputs(info->argv[1]), _eputchar('\n');
 	}
 	else
@@ -77,9 +78,10 @@ int _mycd(info_t *info)
 }
 
 /**
- * _myhelp - entry point
- * @info: Structure
- *  Return: Always 0
+ * _myhelp - affiche l'aide
+ * @info: Structure contenant les arguments potentiels. Utilisée pour maintenir
+ *          le prototype de fonction constant.
+ *  Return: Toujours 0
  */
 int _myhelp(info_t *info)
 {
@@ -88,6 +90,7 @@ int _myhelp(info_t *info)
 	arg_array = info->argv;
 	_puts("help call works. Function not yet implemented \n");
 	if (0)
-		_puts(*arg_array);
+		_puts(*arg_array); /* temp att_unused workaround */
 	return (0);
 }
+

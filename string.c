@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * _strlen - retourne la longueur d'une chaîne de caractères
+ * _strlen - renvoie la longueur d'une chaîne de caractères
  * @s: la chaîne de caractères dont on veut connaître la longueur
  *
  * Return: la longueur de la chaîne de caractères
@@ -19,11 +19,11 @@ int _strlen(char *s)
 }
 
 /**
- * _strcmp - effectue une comparaison lexicographique de deux chaînes de caractères
+ * _strcmp - effectue une comparaison lexicographique de deux chaînes de caractères.
  * @s1: la première chaîne de caractères
  * @s2: la deuxième chaîne de caractères
  *
- * Return: une valeur négative si s1 < s2, une valeur positive si s1 > s2, zéro si s1 == s2
+ * Return: un nombre négatif si s1 < s2, un nombre positif si s1 > s2, zéro si s1 == s2
  */
 int _strcmp(char *s1, char *s2)
 {
@@ -41,11 +41,11 @@ int _strcmp(char *s1, char *s2)
 }
 
 /**
- * starts_with - vérifie si la sous-chaîne needle commence par la chaîne haystack
- * @haystack: la chaîne à rechercher
+ * starts_with - vérifie si needle commence par haystack
+ * @haystack: la chaîne de caractères à rechercher
  * @needle: la sous-chaîne à trouver
  *
- * Return: l'adresse du prochain caractère de haystack ou NULL
+ * Return: l'adresse du caractère suivant de haystack ou NULL
  */
 char *starts_with(const char *haystack, const char *needle)
 {

@@ -4,7 +4,7 @@
  * bfree - entry point
  * @ptr: address
  *
- * Return: 1 or 0
+ * Return: 1 if freed, otherwise 0.
  */
 int bfree(void **ptr)
 {
