@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * interactive - returns true if shell is interactive mode
- * @info: struct address
+ * interactive - renvoie true si le shell est en mode interactif
+ * @info: adresse de la structure
  *
- * Return: 1 if interactive mode, 0 otherwise
+ * Retourne : 1 si en mode interactif, 0 sinon
  */
 int interactive(info_t *info)
 {
@@ -12,10 +12,11 @@ int interactive(info_t *info)
 }
 
 /**
- * is_delim - checks if character is a delimeter
- * @c: the char to check
- * @delim: the delimeter string
- * Return: 1 if true, 0 if false
+ * is_delim - vérifie si le caractère est un délimiteur
+ * @c: le caractère à vérifier
+ * @delim: la chaîne de délimiteurs
+ *
+ * Retourne : 1 si vrai, 0 si faux
  */
 int is_delim(char c, char *delim)
 {
@@ -26,11 +27,11 @@ int is_delim(char c, char *delim)
 }
 
 /**
- *_isalpha - checks for alphabetic character
- *@c: The character to input
- *Return: 1 if c is alphabetic, 0 otherwise
+ * _isalpha - vérifie si un caractère est alphabétique
+ * @c: Le caractère à vérifier
+ *
+ * Retourne : 1 si c est alphabétique, 0 sinon
  */
-
 int _isalpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
@@ -40,17 +41,17 @@ int _isalpha(int c)
 }
 
 /**
- *_atoi - converts a string to an integer
- *@s: the string to be converted
- *Return: 0 if no numbers in string, converted number otherwise
+ * _atoi - convertit une chaîne de caractères en entier
+ * @s: la chaîne de caractères à convertir
+ *
+ * Retourne : 0 s'il n'y a pas de chiffres dans la chaîne, le nombre converti sinon
  */
-
 int _atoi(char *s)
 {
 	int i, sign = 1, flag = 0, output;
 	unsigned int result = 0;
 
-	for (i = 0;  s[i] != '\0' && flag != 2; i++)
+	for (i = 0; s[i] != '\0' && flag != 2; i++)
 	{
 		if (s[i] == '-')
 			sign *= -1;
@@ -72,3 +73,4 @@ int _atoi(char *s)
 
 	return (output);
 }
+
