@@ -68,7 +68,7 @@ void _puts(char *str)
  * _putchar - écrit le caractère c sur stdout
  * @c: Le caractère à imprimer
  *
- * Return : En cas de réussite, 1.
+ * Return: En cas de réussite, 1.
  * En cas d'erreur, -1 est retourné et errno est configuré correctement.
  */
 int _putchar(char c)

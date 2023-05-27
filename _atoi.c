@@ -4,7 +4,7 @@
  * interactive - renvoie true si le shell est en mode interactif
  * @info: adresse de la structure
  *
- * Retourne : 1 si en mode interactif, 0 sinon
+ * Return: 1 si en mode interactif, 0 sinon
  */
 int interactive(info_t *info)
 {
@@ -16,7 +16,7 @@ int interactive(info_t *info)
  * @c: le caractère à vérifier
  * @delim: la chaîne de délimiteurs
  *
- * Retourne : 1 si vrai, 0 si faux
+ * Return: 1 si vrai, 0 si faux
  */
 int is_delim(char c, char *delim)
 {
@@ -30,7 +30,7 @@ int is_delim(char c, char *delim)
  * _isalpha - vérifie si un caractère est alphabétique
  * @c: Le caractère à vérifier
  *
- * Retourne : 1 si c est alphabétique, 0 sinon
+ * Return: 1 si c est alphabétique, 0 sinon
  */
 int _isalpha(int c)
 {
@@ -44,7 +44,7 @@ int _isalpha(int c)
  * _atoi - convertit une chaîne de caractères en entier
  * @s: la chaîne de caractères à convertir
  *
- * Retourne : 0 s'il n'y a pas de
+ * Return: 0 s'il n'y a pas de
  * chiffres dans la chaîne, le nombre converti sinon
  */
 int _atoi(char *s)
