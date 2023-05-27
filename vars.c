@@ -1,7 +1,8 @@
 #include "shell.h"
 
 /**
- * is_chain - teste si le caractère actuel dans le tampon est un délimiteur de chaîne
+ * is_chain - teste si le caractère
+ * actuel dans le tampon est un délimiteur de chaîne
  * @info: la structure de paramètres
  * @buf: le tampon de caractères
  * @p: adresse de la position actuelle dans buf
@@ -36,7 +37,8 @@ int is_chain(info_t *info, char *buf, size_t *p)
 }
 
 /**
- * check_chain - vérifie si nous devons continuer à enchaîner en fonction du dernier état
+ * check_chain - vérifie si nous
+ * devons continuer à enchaîner en fonction du dernier état
  * @info: la structure de paramètres
  * @buf: le tampon de caractères
  * @p: adresse de la position actuelle dans buf
@@ -99,7 +101,8 @@ int replace_alias(info_t *info)
 }
 
 /**
- * replace_vars - remplace les variables dans la chaîne de caractères tokenisée
+ * replace_vars - remplace
+ * les variables dans la chaîne de caractères tokenisée
  * @info: la structure de paramètres
  *
  * Return: 1 si remplacé, 0 sinon

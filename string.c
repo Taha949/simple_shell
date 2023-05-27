@@ -19,11 +19,13 @@ int _strlen(char *s)
 }
 
 /**
- * _strcmp - effectue une comparaison lexicographique de deux chaînes de caractères.
+ * _strcmp - effectue une comparaison
+ * lexicographique de deux chaînes de caractères.
  * @s1: la première chaîne de caractères
  * @s2: la deuxième chaîne de caractères
  *
- * Return: un nombre négatif si s1 < s2, un nombre positif si s1 > s2, zéro si s1 == s2
+ * Return: un nombre négatif si s1 < s2,
+ * un nombre positif si s1 > s2, zéro si s1 == s2
  */
 int _strcmp(char *s1, char *s2)
 {

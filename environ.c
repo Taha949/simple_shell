@@ -2,7 +2,8 @@
 
 /**
  * _myenv - affiche l'environnement actuel
- * @info: Structure contenant les arguments potentiels. Utilisée pour maintenir
+ * @info: Structure contenant les
+ * arguments potentiels. Utilisée pour maintenir
  *          le prototype de fonction constant.
  * Return: Toujours 0
  */
@@ -14,7 +15,8 @@ int _myenv(info_t *info)
 
 /**
  * _getenv - obtient la valeur d'une variable d'environnement
- * @info: Structure contenant les arguments potentiels. Utilisée pour maintenir
+ * @info: Structure contenant les
+ * arguments potentiels. Utilisée pour maintenir
  * @name: nom de la variable d'environnement
  *
  * Return: la valeur
@@ -37,7 +39,8 @@ char *_getenv(info_t *info, const char *name)
 /**
  * _mysetenv - initialise une nouvelle variable d'environnement
  *             ou modifie une variable existante
- * @info: Structure contenant les arguments potentiels. Utilisée pour maintenir
+ * @info: Structure contenant les
+ * arguments potentiels. Utilisée pour maintenir
  *        le prototype de fonction constant.
  *  Return: Toujours 0
  */
@@ -55,7 +58,8 @@ int _mysetenv(info_t *info)
 
 /**
  * _myunsetenv - supprime une variable d'environnement
- * @info: Structure contenant les arguments potentiels. Utilisée pour maintenir
+ * @info: Structure contenant les
+ * arguments potentiels. Utilisée pour maintenir
  *        le prototype de fonction constant.
  *  Return: Toujours 0
  */
@@ -76,7 +80,8 @@ int _myunsetenv(info_t *info)
 
 /**
  * populate_env_list - remplit la liste chaînée de l'environnement
- * @info: Structure contenant les arguments potentiels. Utilisée pour maintenir
+ * @info: Structure contenant les
+ * arguments potentiels. Utilisée pour maintenir
  *          le prototype de fonction constant.
  * Return: Toujours 0
  */

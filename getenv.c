@@ -1,8 +1,10 @@
 #include "shell.h"
 
 /**
- * get_environ - renvoie une copie du tableau de chaînes de caractères environ
- * @info: Structure contenant les arguments potentiels. Utilisée pour maintenir
+ * get_environ - renvoie une copie du tableau
+ * de chaînes de caractères environ
+ * @info: Structure contenant les arguments
+ * potentiels. Utilisée pour maintenir
  *         un prototype de fonction constant.
  * Return: Toujours 0
  */
@@ -19,9 +21,11 @@ char **get_environ(info_t *info)
 
 /**
  * _unsetenv - Supprime une variable d'environnement
- * @info: Structure contenant les arguments potentiels. Utilisée pour maintenir
+ * @info: Structure contenant les arguments
+ * potentiels. Utilisée pour maintenir
  *         un prototype de fonction constant.
- * @var: la propriété de la variable d'environnement en tant que chaîne de caractères
+ * @var: la propriété de la variable
+ * d'environnement en tant que chaîne de caractères
  * Return: 1 en cas de suppression, 0 sinon
  */
 int _unsetenv(info_t *info, char *var)
@@ -52,10 +56,13 @@ int _unsetenv(info_t *info, char *var)
 /**
  * _setenv - Initialise une nouvelle variable d'environnement,
  *           ou modifie une variable existante
- * @info: Structure contenant les arguments potentiels. Utilisée pour maintenir
+ * @info: Structure contenant les
+ * arguments potentiels. Utilisée pour maintenir
  *        un prototype de fonction constant.
- * @var: la propriété de la variable d'environnement en tant que chaîne de caractères
- * @value: la valeur de la variable d'environnement en tant que chaîne de caractères
+ * @var: la propriété de la variable
+ * d'environnement en tant que chaîne de caractères
+ * @value: la valeur de la variable
+ * d'environnement en tant que chaîne de caractères
  * Return: Toujours 0
  */
 int _setenv(info_t *info, char *var, char *value)

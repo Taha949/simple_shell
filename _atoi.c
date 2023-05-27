@@ -44,7 +44,8 @@ int _isalpha(int c)
  * _atoi - convertit une chaîne de caractères en entier
  * @s: la chaîne de caractères à convertir
  *
- * Retourne : 0 s'il n'y a pas de chiffres dans la chaîne, le nombre converti sinon
+ * Retourne : 0 s'il n'y a pas de
+ * chiffres dans la chaîne, le nombre converti sinon
  */
 int _atoi(char *s)
 {

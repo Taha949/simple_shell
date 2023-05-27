@@ -63,7 +63,7 @@ ssize_t get_input(info_t *info)
 		return (-1);
 	if (len)	/* il reste des commandes dans le tampon de la chaîne */
 	{
-		j = i; /* initialise un nouvel itérateur à la position actuelle du tampon */
+		j = i; /* initialise new  itérateur à la position actuelle du tampon */
 		p = buf + i; /* obtient un pointeur pour le retour */
 
 		check_chain(info, buf, &j, i, len);
@@ -81,12 +81,12 @@ ssize_t get_input(info_t *info)
 			info->cmd_buf_type = CMD_NORM;
 		}
 
-		*buf_p = p; /* retourne un pointeur vers la position actuelle de la commande */
+		*buf_p = p; /* retourne un pointeur vers la positionde la commande */
 		return (_strlen(p)); /* retourne la longueur de la commande actuelle */
 	}
 
-	*buf_p = buf; /* sinon, ce n'est pas une chaîne, retourne le tampon de _getline() */
-	return (r); /* retourne la longueur du tampon de _getline() */
+	*buf_p = buf;
+	return (r);
 }
 
 /**
@@ -138,7 +138,7 @@ int _getline(info_t *info, char **ptr, size_t *length)
 	c = _strchr(buf + i, '\n');
 	k = c ? 1 + (unsigned int)(c - buf) : len;
 	new_p = _realloc(p, s, s ? s + k : k + 1);
-	if (!new_p) /* ÉCHEC DE L'ALLOCATION DE MÉMOIRE ! */
+	if (!new_p)
 		return (p ? free(p), -1 : -1);
 
 	if (s)

@@ -2,7 +2,8 @@
 
 /**
  * _myexit - quitte le shell
- * @info: Structure contenant les arguments potentiels. Utilisée pour maintenir
+ * @info: Structure contenant les
+ * arguments potentiels. Utilisée pour maintenir
  *          le prototype de fonction constant.
  *  Return: quitte avec un statut de sortie donné
  *         (0) si info->argv[0] != "exit"
@@ -31,7 +32,8 @@ int _myexit(info_t *info)
 
 /**
  * _mycd - change le répertoire courant du processus
- * @info: Structure contenant les arguments potentiels. Utilisée pour maintenir
+ * @info: Structure contenant les
+ * arguments potentiels. Utilisée pour maintenir
  *          le prototype de fonction constant.
  *  Return: Toujours 0
  */
@@ -79,7 +81,8 @@ int _mycd(info_t *info)
 
 /**
  * _myhelp - affiche l'aide
- * @info: Structure contenant les arguments potentiels. Utilisée pour maintenir
+ * @info: Structure contenant les
+ * arguments potentiels. Utilisée pour maintenir
  *          le prototype de fonction constant.
  *  Return: Toujours 0
  */

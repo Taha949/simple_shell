@@ -123,7 +123,8 @@ int build_history_list(info_t *info, char *buf, int linecount)
 }
 
 /**
- * renumber_history - renumérote la liste chaînée d'historique après des modifications
+ * renumber_history - renumérote la liste
+ * chaînée d'historique après des modifications
  * @info: structure des paramètres
  *
  * Return: le nouveau histcount

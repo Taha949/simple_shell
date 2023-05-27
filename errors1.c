@@ -3,7 +3,8 @@
 /**
  * _erratoi - convertit une chaîne de caractères en un entier
  * @s: la chaîne de caractères à convertir
- * Return: 0 s'il n'y a pas de nombres dans la chaîne, le nombre converti sinon
+ * Return: 0 s'il n'y a pas de nombres
+ * dans la chaîne, le nombre converti sinon
  *       -1 en cas d'erreur
  */
 int _erratoi(char *s)

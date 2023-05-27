@@ -19,7 +19,8 @@ size_t list_len(const list_t *h)
 }
 
 /**
- * list_to_strings - retourne un tableau de chaînes de caractères des valeurs list->str
+ * list_to_strings - retourne un tableau
+ * de chaînes de caractères des valeurs list->str
  * @head: pointeur vers le premier nœud
  *
  * Return: tableau de chaînes de caractères
@@ -78,7 +79,8 @@ size_t print_list(const list_t *h)
 }
 
 /**
- * node_starts_with - retourne le nœud dont la chaîne commence par le préfixe
+ * node_starts_with - retourne le nœud
+ * dont la chaîne commence par le préfixe
  * @node: pointeur vers le premier nœud
  * @prefix: chaîne à rechercher
  * @c: le prochain caractère après le préfixe à rechercher

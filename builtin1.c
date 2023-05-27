@@ -1,9 +1,11 @@
 #include "shell.h"
 
 /**
- * _myhistory - affiche la liste de l'historique, une commande par ligne,
+ * _myhistory - affiche la liste de
+ * l'historique, une commande par ligne,
  *              précédée des numéros de ligne, à partir de 0.
- * @info: Structure contenant les arguments potentiels. Utilisée pour maintenir
+ * @info: Structure contenant
+ * les arguments potentiels. Utilisée pour maintenir
  *        le prototype de fonction constant.
  *  Return: Toujours 0
  */
@@ -82,7 +84,8 @@ int print_alias(list_t *node)
 
 /**
  * _myalias - reproduit la commande alias (man alias)
- * @info: Structure contenant les arguments potentiels. Utilisée pour maintenir
+ * @info: Structure contenant les
+ * arguments potentiels. Utilisée pour maintenir
  *          le prototype de fonction constant.
  *  Return: Toujours 0
  */
